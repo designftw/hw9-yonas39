@@ -8,15 +8,13 @@
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" type="module"></script>
   </head>
-  <body>
+  <body id="app">
     <h1>Weightlifting Tracker</h1>
     <header>
       <button id="save_button">Save</button>
-      <span id="myUsername"></span>
-      <button id="loginButton" onclick="backend.login()">LogIn</button>
-      <button id="logoutButton" onclick="backend.logout()" hidden>
-        LogOut
-      </button>
+      <span id="username"></span>
+      <button id="login_button">LogIn</button>
+      <button id="logout_button" hidden>LogOut</button>
     </header>
 
     <template id="entry_template">
