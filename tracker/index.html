@@ -1,34 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Tracker</title>
-	<script src="index.js" type="module"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weightlifting Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" type="module"></script>
+  </head>
+  <body>
+    <h1>Weightlifting Tracker</h1>
+    <header>
+      <button id="save_button">Save</button>
+      <span id="myUsername"></span>
+      <button id="loginButton" onclick="backend.login()">LogIn</button>
+      <button id="logoutButton" onclick="backend.logout()" hidden>
+        LogOut
+      </button>
+    </header>
 
-<header>
-	<button id="save_button">Save</button>
-</header>
+    <template id="entry_template">
+      <article class="entry">
+        <form>
+          <!-- <label
+            >Date & Time: <input type="datetime-local" name="datetime"
+          /></label>
+          <label>Notes: <textarea name="notes"></textarea></label> -->
+          <div class="form-row">
+            <label>Date: <input type="date" name="date" /></label>
+            <label>Exercise: <input type="text" name="exercise" /></label>
+            <label>Sets: <input type="number" name="sets" min="1" /></label>
+            <label
+              >Repetitions: <input type="number" name="reps" min="1"
+            /></label>
+            <label
+              >Weight(lbs):
+              <input type="number" name="weight" step="0.5" min="0"
+            /></label>
+            <label
+              >Rest Time(s):
+              <input type="number" name="rest_time" step="5" min="0"
+            /></label>
+            <label>Notes: <textarea name="notes"></textarea></label>
+            <button id="remove_one_button">X</button>
+          </div>
+        </form>
+      </article>
+    </template>
 
-<template id="entry_template">
-	<article class="entry">
-		<form>
-			<label>Date & Time: <input type="datetime-local" name="datetime"></label>
-			<label>Notes: <textarea name="notes"></textarea></label>
-		</form>
-	</article>
-</template>
+    <main>
+      <button id="remove_all_button">Remove all</button>
+      <button id="add_entry_button">Add entry</button>
+    </main>
 
-<main>
-	<button id="add_entry_button">Add entry</button>
-</main>
-
-<details>
-	<summary>Raw data</summary>
-	<pre id="data">
+    <details>
+      <summary>Raw data</summary>
+      <pre id="data">
 		[
 			{
 				"datetime": "2023-04-10T10:00:00",
@@ -39,9 +66,8 @@
 				"notes": "Stressed out."
 			}
 		]
-	</pre>
-</details>
-
-
-</body>
+	</pre
+      >
+    </details>
+  </body>
 </html>

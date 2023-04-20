@@ -1,13 +1,25 @@
+import Backend from "https://madata.dev/src/index.js";
+
 let $$ = (selector, container = document) =>
   Array.from(container.querySelectorAll(selector));
 let $ = (selector, container = document) => container.querySelector(selector);
 
-// Load data
-let storedData = JSON.parse(data.innerHTML);
+const backend = Backend.from(
+  "https://github.com/designftw/hw9-yonas39/tree/master/tracker/data.json"
+);
 
-for (let entry of storedData) {
-  addEntry(entry);
-}
+backend.addEventListener("mv-login", (evt) => {
+  loginButton.hidden = true;
+  logoutButton.hidden = false;
+  myUsername.textContent = backend.user.username;
+});
+
+// Load data
+// let storedData = JSON.parse(data.innerHTML);
+
+// for (let entry of storedData) {
+//   addEntry(entry);
+// }
 
 save_button.addEventListener("click", (event) => {
   let dataToSave = $$(".entry > form").map((form) => {
