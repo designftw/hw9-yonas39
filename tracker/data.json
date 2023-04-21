@@ -1,11 +1,11 @@
 [
 	{
-		"date": "",
-		"exercise": "",
-		"sets": "",
-		"reps": "",
-		"weight": "",
-		"rest_time": "",
-		"notes": ""
+		"date": "2023-04-19",
+		"exercise": "hello world ",
+		"sets": "4",
+		"reps": "56",
+		"weight": "34",
+		"rest_time": "4",
+		"notes": "great"
 	}
 ]
