@@ -81,16 +81,6 @@ summary {
   cursor: pointer;
 }
 
-pre {
-  font-family: monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  background-color: #f6f8fa;
-  padding: 1em;
-  border-radius: 5px;
-  overflow-x: auto;
-}
-
 /* status update loading... */
 .loading {
   position: fixed;

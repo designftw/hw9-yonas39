@@ -14,6 +14,7 @@ const loginButton = document.querySelector("#login_button");
 const logooutButton = document.querySelector("#logout_button");
 const saveButton = document.querySelector("#save_button");
 const addEntryButton = document.querySelector("#add_entry_button");
+const removeAllButton = document.querySelector("#remove_all_button");
 
 ///////////////////////////////////////////////////////////////
 /////////////////////ShowLoading//////////////////////
@@ -79,6 +80,10 @@ backend.addEventListener("mv-logout", () => {
   document.getElementById("login_button").hidden = false;
   document.getElementById("logout_button").hidden = true;
   document.getElementById("username").hidden = true;
+
+  // remove all entries when logged out
+  const entries = $$(".entry");
+  entries.forEach((entry) => entry.remove());
 });
 
 ///////////////////////////////////////////////////////////////
@@ -106,6 +111,11 @@ addEntryButton.addEventListener("click", (event) => {
   addEntry({ datetime: currentISODate });
 });
 
+removeAllButton.addEventListener("click", () => {
+  const entries = $$(".entry");
+  entries.forEach((entry) => entry.remove());
+});
+
 // ###############################################
 // ##################Get data start####################
 // ###############################################
@@ -127,18 +137,14 @@ function addEntry(data) {
     setFormElement(prop, data[prop], entry);
   }
 
+  // remove a row when the X button is clicked
+  const removeOneButton = entry.querySelector("#remove_one_button");
+  removeOneButton.addEventListener("click", () => {
+    removeOneButton.closest(".entry").remove();
+  });
+
   addEntryButton.after(entry);
 }
-// function addEntry(data) {
-//   let entry = entry_template.content.cloneNode(true);
-
-//   for (let prop in data) {
-//     setFormElement(prop, data[prop], entry);
-//   }
-
-//   // Add new entry after "Add entry" button
-//   add_entry_button.after(entry);
-// }
 
 function setFormElement(name, value, container) {
   let elements = $$(`[name="${name}"]`, container);
@@ -155,3 +161,4 @@ function setFormElement(name, value, container) {
     }
   }
 }
+addEntry({ datetime: new Date().toISOString().substring(0, 19) });
