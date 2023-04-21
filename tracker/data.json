@@ -1,14 +1,5 @@
 [
 	{
-		"date": "",
-		"exercise": "",
-		"sets": "",
-		"reps": "",
-		"weight": "",
-		"rest_time": "",
-		"notes": ""
-	},
-	{
 		"date": "2023-04-13",
 		"exercise": "Yonas",
 		"sets": "",
@@ -16,5 +7,14 @@
 		"weight": "",
 		"rest_time": "",
 		"notes": "cho"
+	},
+	{
+		"date": "2023-04-22",
+		"exercise": "karate",
+		"sets": "3",
+		"reps": "14",
+		"weight": "56",
+		"rest_time": "76",
+		"notes": "yellow"
 	}
 ]
