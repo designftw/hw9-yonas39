@@ -1,29 +1,20 @@
 [
 	{
-		"date": "",
-		"exercise": "",
-		"sets": "",
-		"reps": "",
-		"weight": "",
-		"rest_time": "",
-		"notes": ""
+		"date": "2023-03-03",
+		"exercise": "challenge ",
+		"sets": "45",
+		"reps": "56",
+		"weight": "75",
+		"rest_time": "8",
+		"notes": "hell"
 	},
 	{
-		"date": "2023-04-22",
-		"exercise": "karate",
+		"date": "2023-04-21",
+		"exercise": "today",
 		"sets": "3",
 		"reps": "14",
 		"weight": "56",
-		"rest_time": "76",
-		"notes": "yellow"
-	},
-	{
-		"date": "2023-04-13",
-		"exercise": "Yonas",
-		"sets": "",
-		"reps": "",
-		"weight": "",
-		"rest_time": "",
-		"notes": "cho"
+		"rest_time": "5",
+		"notes": "bicha"
 	}
 ]
