@@ -79,7 +79,7 @@ backend.addEventListener("mv-logout", () => {
   document.getElementById("app").classList.remove("logged-in");
   document.getElementById("login_button").hidden = false;
   document.getElementById("logout_button").hidden = true;
-  document.getElementById("username").hidden = true;
+  document.getElementById("username").textContent = "";
 
   // remove all entries when logged out
   const entries = $$(".entry");
@@ -95,9 +95,25 @@ backend.addEventListener("mv-logout", () => {
 // ############################################################
 
 // Modified saveButton event listner to store data to data.json using madata
+// saveButton.addEventListener("click", async (e) => {
+//   showLoading(async () => {
+//     await backend.store(getData());
+//   });
+// });
 saveButton.addEventListener("click", async (e) => {
   showLoading(async () => {
+    // Store the data and then clear the UI
     await backend.store(getData());
+    const entries = $$(".entry");
+    entries.forEach((entry) => entry.remove());
+
+    // Fetch the updated data and display it in the UI
+    const storedData = await backend.load();
+    if (storedData) {
+      for (let entry of storedData) {
+        addEntry(entry);
+      }
+    }
   });
 });
 
@@ -161,4 +177,5 @@ function setFormElement(name, value, container) {
     }
   }
 }
+
 addEntry({ datetime: new Date().toISOString().substring(0, 19) });
