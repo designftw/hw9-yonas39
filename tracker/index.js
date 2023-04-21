@@ -5,7 +5,8 @@ let $$ = (selector, container = document) =>
 let $ = (selector, container = document) => container.querySelector(selector);
 
 const backend = Backend.from(
-  "https://github.com/designftw/hw9-yonas39/tree/master/tracker/data.json"
+  "https://github.com/designftw/hw9-yonas39/blob/master/tracker/data.json"
+  // "https://github.com/designftw/hw9-yonas39/tree/master/tracker/data.json"
 );
 const loginButton = document.querySelector("#login_button");
 const logooutButton = document.querySelector("#logout_button");
